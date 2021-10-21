@@ -1,0 +1,87 @@
+<ion-header class="Header" no-shadow no-border>
+  <ion-toolbar color="trasnparent" no-border>
+    <ion-buttons  start>
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content padding>
+  <div  class="DivPrincipal"> 
+    <div class="DivImagen1">
+      <img  class="Img1" src="assets/images/ImagenesAppMovil/Menu/Blob 1.png"  >
+    </div>
+    <div class="DivImagen2">
+      <img  class="Img2" src="assets/images/ImagenesAppMovil/Menu/Blob 2.png"  >
+    </div>
+    <h2>
+      Cursos Favoritos
+    </h2>
+  </div>
+
+  <div class="DivCursosPrincipal">
+
+   
+     <div class="DivCurso" >
+      <div style="width: 100%;">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <div class="Div3" *ngIf="data==null">
+        <img   src="assets/images/ImagenesAppMovil/Favoritos/Triste.png"  >
+        <h2>
+          Mala Suerte
+        </h2>
+        <p>
+          No tiene cursos favoritos!
+        </p>
+        
+      </div>
+      <ion-searchbar *ngIf="data!=null" style="margin-top: 15%;" [(ngModel)]="Buscar"></ion-searchbar>
+      <div id="all_courses" *ngIf="data!=null" > 
+        <ion-grid >
+          <ion-row  *ngFor="let course of data| filtro:Buscar: 'Titulo';let i = index" >
+            <ion-col   col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 >
+                <ion-card class="Card{{i}}">
+                 
+                  <a   title="[Fi+1]"  (click)="QuitarFavoritos(course.Id_CursoFavorito)"  id="{{course.Id_Curso}}">
+                    
+                    <ion-icon class="wishlist Activado{{course.Favorito}}"   name="heart">
+                    </ion-icon>
+                  </a>
+                  
+                 
+                  <div class="course_block" (click)="InformacionCurso(course.Disponible,course.Id_Curso)">
+                      <ion-grid>
+                          <ion-row>
+                              <ion-col col-6 col-sm-12>
+                                  <div class="course_featured_image" >
+                                    <img  src="http://localhost/ProyectoIsabel/Imagenes/Cursos/{{course.Foto}}">
+                                  </div>
+                              </ion-col>
+                              <ion-col col-6 col-sm-12 #featured >
+                                  <ion-card-content  class="align-left">
+                                      <ion-card-title>
+                                          {{course.Titulo}}
+                                      </ion-card-title>
+                                      <star-rating [rating]="3"></star-rating>
+                                      <span class="course_instructor"> {{ course.Nombres + " " + course.Apellidos }}</span>
+                                      <div class="course_price"  *ngIf="course.Disponible == 'Disponible'">{{ course.Disponible}}</div>
+                                      <div class="course_price1" *ngIf="course.Disponible == 'No Disponible'" >{{ course.Disponible}}</div>
+                                  </ion-card-content>
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                  </div>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+           
+        </div>
+    </div> 
+  </div>
+  
+</ion-content>

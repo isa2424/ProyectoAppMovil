@@ -1,0 +1,142 @@
+<ion-header class="Header" no-shadow no-border>
+  <ion-toolbar color="trasnparent" no-border>
+    <ion-buttons  start (click)="Menu()">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  
+
+
+<ion-content class="video-playlist-content" [scrollEvents]="true" >
+  <div  class="DivPrincipal"> 
+    <div class="video-player-container">
+      <vg-player class="video-player" (onPlayerReady)="onPlayerReady($event)">
+        <vg-buffering></vg-buffering>
+        <vg-overlay-play></vg-overlay-play>
+  
+        <vg-controls [vgAutohide]="true" [vgAutohideTime]="5">
+          <ion-row class="controls-row">
+            <ion-col no-padding size=2>
+              <vg-time-display [vgProperty]="'current'" [vgFormat]="'mm:ss'"></vg-time-display>
+            </ion-col>
+            <ion-col no-padding >
+              <vg-scrub-bar> 
+                  <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                  <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              </vg-scrub-bar>
+            </ion-col>
+            <ion-col no-padding size=2>
+              <vg-time-display [vgProperty]="'left'" [vgFormat]="'mm:ss'"></vg-time-display>
+            </ion-col>
+            <ion-col no-padding size=2>
+              <vg-fullscreen></vg-fullscreen>
+            </ion-col>
+          </ion-row>
+        </vg-controls>
+        <video class="expand-horizontally" #player_video [vgMedia]="player_video" id="player-video" preload="auto">
+          <source *ngFor="let media of Seleccionar_Video" [src]="media.Direccion_Video" [type]="media.Tipo">
+        </video>
+      </vg-player>
+    </div>
+    
+  </div>
+  <div style=" background: #f18c8e;     height: 5%;"></div>
+  <div class="DivCursosPrincipal">
+    <div class="DivCurso">
+      <div style="width: 100%; ">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <ion-row class="InformacionVideo">
+        <ion-col no-padding>
+          <div class="Autor">
+            <ion-grid>
+              <ion-row>
+                  <ion-col size="3" >
+                      <div >
+                        <img  src="http://localhost/ProyectoIsabel/Imagenes/Cursos/{{data.FotoCurso}}">
+                       
+                      </div>
+                  </ion-col>
+                  <ion-col  >
+                      <ion-card-content  >
+                          <ion-card-title>
+                            {{data.TituloCurso}} 
+                          </ion-card-title> 
+                      </ion-card-content>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+          </div>
+          <h2 class="video-title"  *ngFor="let media of Seleccionar_Video">{{ media.Titulo }}</h2>
+          <p class="video-description"  *ngFor="let media of Seleccionar_Video">{{ media.Descripcion }}</p>
+
+         
+        </ion-col>
+      </ion-row>
+      <div class="Contenido">
+        <div class="TituloContenido">
+          Contenido del Curso
+        </div>
+        <ion-grid class="ContenidoVideos">
+          <ion-row  *ngFor="let media of data.ContenidoCurso;let i = index">
+            <ion-item class="Item{{i+1}}">
+              <ion-col size="4" >
+                <ion-thumbnail   class="media-thumbnail" item-left (click)="playMedia(media) ">
+                  <cargar-imagen  class="media-thumbnail-image" [ratio]="{w:16, h:9}" [src]="media.Direccion_Imagen"></cargar-imagen>
+                
+                </ion-thumbnail>
+              </ion-col>
+              <ion-col  >
+                  <ion-card-content  >
+                      <ion-card-title class="Titulo">
+                        {{ media.Titulo }}
+                      </ion-card-title>
+                      <p class="Description" rows="2">{{ media.Descripcion }}</p>
+                      <p  *ngIf="media.Disponible==1" class="Disponible" >Disponible</p>
+                      <p class="NoDisponible" *ngIf="media.Disponible==0">No disponible</p>
+                  </ion-card-content>
+              </ion-col>
+             
+            </ion-item>
+          </ion-row>
+          <ion-row class="Quiz" >
+            <ion-item class="Item1" (click)="IniciarQuiz()"> 
+              <ion-col size="4" >
+                <div >
+                  <img src="assets/images/ImagenesAppMovil/TutorialesVideos/Quiz.png">
+                 
+                </div>
+              </ion-col>
+              <ion-col  >
+                  <ion-card-content  >
+                      <ion-card-title class="Titulo">
+                         Examen Final
+                      </ion-card-title>
+                      <h2 class="Tiempo" >
+                        Tiempo por pregunta: 30 Seg
+                      </h2>
+                      <h2 class="Tiempo" >
+                        Oportunidades:{{Oportunidad}} intento Disponible
+                      </h2>
+                      <p  *ngIf="ActivarQuiz==true" class="Disponible" >Disponible</p>
+                      <p class="NoDisponible" *ngIf="ActivarQuiz!==true">No disponible</p>
+                  </ion-card-content>
+              </ion-col>
+             
+            </ion-item>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+     
+    </div>
+  </div>
+	
+    
+  
+    
+
+   
+</ion-content>

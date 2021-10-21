@@ -1,0 +1,215 @@
+<ion-content class="custom-bacgroud1 otherbkg" >
+  <div class="theme-bg"></div>
+  <div class="otherbkg" style="text-align: center;">
+    <div style="display: flex;">
+      
+      <img style="margin: auto; position: relative;
+      width: 200px; top: 0.5em; " src="../../assets/imgs/Perfil/rc_logo.png" alt="">
+    </div>
+
+
+    <div   style="width: 300px;height: 396.74px;border-radius: 10px;background: #000000;box-shadow: 0px 6px 50px #000000;    margin: auto;">
+      <p text-center>
+        <ion-text color="light">
+          registrarse
+        </ion-text>
+      </p>
+      <form [formGroup]="onRegisterForm" class="form-background">
+      
+
+        
+          <ion-item class="cajaTexto">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-input [(ngModel)]="data.Usuario" (keydown)="soloLetras($event)" formControlName="fullName" autocapitalize inputmode="text" placeholder="Digite nombres"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.fullName" align="center" class="alert-danger">
+            <div class="container-error-message" *ngIf="fullName.hasError(error.type) && (fullName.dirty || fullName.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </div>
+          </div>
+  
+        <br>
+        
+          <ion-item class="cajaTexto">
+            <ion-icon name="mail-outline" slot="start" ></ion-icon>
+            <ion-input  [(ngModel)]="data.Correo" formControlName="email" autocapitalize inputmode="text" placeholder="Digite correo"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email" align="center" class="alert-danger">
+            <div class="container-error-message" *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </div>
+          </div> 
+  
+        
+  
+       
+  
+        <br>
+         
+          <ion-item class="cajaTexto">
+            <ion-icon name="key-outline" slot="start" ></ion-icon>
+            <ion-input  [(ngModel)]="data.Clave" #passwordEyeRegister formControlName="password" autocapitalize [type]="passwordTypeInput" placeholder="Digite contraseña" clearOnEdit="false"></ion-input>
+            <ion-icon  color="primary" item-end (click)="togglePasswordMode()"  [name]="(passwordTypeInput === 'text')?'eye-off-outline':'eye-outline'"></ion-icon>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password" align="center" class="alert-danger">
+            <div class="container-error-message" *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </div>
+          </div>
+      </form>
+  
+      <div margin-top>
+        <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+          tappable>
+          <ion-icon name="log-in"></ion-icon>
+          Registrase
+        </ion-button>
+  
+        <p text-center>
+          <ion-text color="light">
+            O registrarse con:
+          </ion-text>
+        </p>
+  
+        <ion-grid class="btn-group">
+          <ion-row>
+            <ion-col size="4">
+              <ion-button (click)="doFbLogin()" shape="round" expand="full" color="primary">
+                <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button shape="round" expand="full" color="secondary">
+                <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="4">
+              <ion-button shape="round" expand="full" color="danger">
+                <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+      </div>
+  
+      <!-- Other links -->
+      <div text-center margin-top>
+        <span (click)="goToLogin()" tappable>
+          <ion-text color="light">
+            <strong>Tengo una Cuenta!</strong>
+          </ion-text>
+        </span>
+      </div>
+    </div>
+    
+
+  </div>
+</ion-content>
+
+<!--
+<ion-content padding class="login auth-page">
+
+  <div class="auth-content">
+  
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="secondary">Registro</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+
+   
+    <form [formGroup]="onRegisterForm" class="list-form">
+      
+
+      <b><ion-label color="primary">Nombres:</ion-label></b>
+        <ion-item class="cajaTexto">
+          <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+          <ion-input [(ngModel)]="data.Usuario" (keydown)="soloLetras($event)" formControlName="fullName" autocapitalize inputmode="text" placeholder="Digite nombres"></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.fullName" align="center" class="alert-danger">
+          <div class="container-error-message" *ngIf="fullName.hasError(error.type) && (fullName.dirty || fullName.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </div>
+        </div>
+
+      <br>
+      <b><ion-label color="primary">Correo:</ion-label></b>
+        <ion-item class="cajaTexto">
+          <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
+          <ion-input  [(ngModel)]="data.Correo" formControlName="email" autocapitalize inputmode="text" placeholder="Digite correo"></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.email" align="center" class="alert-danger">
+          <div class="container-error-message" *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </div>
+        </div> 
+
+      
+
+     
+
+      <br>
+        <b><ion-label color="primary">Contraseña:</ion-label></b>
+        <ion-item class="cajaTexto">
+          <ion-icon name="key-outline" slot="start" color="primary"></ion-icon>
+          <ion-input  [(ngModel)]="data.Clave" #passwordEyeRegister formControlName="password" autocapitalize [type]="passwordTypeInput" placeholder="Digite contraseña" clearOnEdit="false"></ion-input>
+          <ion-icon  color="primary" item-end (click)="togglePasswordMode()"  [name]="(passwordTypeInput === 'text')?'eye-off-outline':'eye-outline'"></ion-icon>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.password" align="center" class="alert-danger">
+          <div class="container-error-message" *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </div>
+        </div>
+    </form>
+
+    <div margin-top>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Registrase
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+          O registrarse con:
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    
+    <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="light">
+          <strong>Tengo una Cuenta!</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>
+-->

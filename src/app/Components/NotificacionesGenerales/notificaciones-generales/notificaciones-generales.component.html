@@ -1,0 +1,21 @@
+<ion-list no-padding no-margin>
+  <ion-list-header >
+    <ion-label class="fw700">{{Titulo}}</ion-label>
+  </ion-list-header>
+
+  <ion-card-content  >
+    <ion-card-title class="Titulo">
+      Motivo:
+    </ion-card-title>
+    <p class="Description">
+     {{Informacion}}
+    </p>
+    
+  </ion-card-content>
+  <div *ngIf="ActivarBoton==true">
+    <button id="course_button"   (click)="Opciones()"ion-button icon-left >{{TextoBoton}}</button>
+  </div>
+  <div *ngIf="ActivarBotonDiagnostico==true">
+    <button id="course_button"   (click)="IniciarPruebaDiagnostico()"ion-button icon-left >{{TextoBoton}}</button>
+  </div>
+</ion-list>

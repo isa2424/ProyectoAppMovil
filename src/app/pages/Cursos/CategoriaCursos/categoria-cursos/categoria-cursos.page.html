@@ -1,0 +1,85 @@
+<ion-header class="Header" no-shadow no-border>
+  <ion-toolbar color="trasnparent" no-border>
+    <ion-buttons  start>
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content padding>
+  <div  class="DivPrincipal"> 
+    <div class="DivImagen1">
+      <img  class="Img1" src="assets/images/ImagenesAppMovil/Menu/Blob 1.png"  >
+    </div>
+    <div class="DivImagen2">
+      <img  class="Img2" src="assets/images/ImagenesAppMovil/Menu/Blob 2.png"  >
+    </div>
+    <h2>
+      Categorias disponibles
+    </h2>
+  </div>
+
+  <div class="DivCursosPrincipal">
+    <div class="DivCurso">
+      <div style="width: 100%;">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <ion-searchbar style="margin-top: 15%;" [(ngModel)]="Buscar"></ion-searchbar>
+    
+      <div id="all_courses"  > 
+        <ion-grid >
+          <ion-row  *ngFor="let course of data  | filtro:Buscar: 'Titulo';let i = index" >
+            <ion-col   col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 >
+                <ion-card class="Card{{i}}">
+                  <div class="course_block">
+                      <ion-grid (click)="Cursos(course.CantidadCurso,course.Id_Categoria)">
+                          <ion-row  >
+                              <ion-col size="4">
+                                  <div class="course_featured_image" >
+                                    <img  src="http://localhost/ProyectoIsabel/Imagenes/Categorias/{{course.Foto}}">
+                                  </div>
+                              </ion-col>
+                              <ion-col col-6 col-sm-12 #featured >
+                                  <ion-card-content  class="align-left">
+                                      <ion-card-title>
+                                          {{course.Titulo}}
+                                      </ion-card-title>
+                                      <div  *ngIf="course.CantidadCurso == null">
+                                        <span class="course_instructor">0 Cursos</span>
+                                        <div class="course_price1" >Categoria No Disponible</div>
+
+                                      </div>
+                                      <div  *ngIf="course.CantidadCurso != null">
+                                        <span class="course_instructor">{{course.CantidadCurso}} Cursos</span>
+                                        <div class="course_price" >Categoria Disponible</div>
+
+                                      </div>
+                                      
+
+                                      
+                                  </ion-card-content>
+                              </ion-col>
+                              
+                              
+                          </ion-row>
+                          <ion-card-content  class="align-left">
+                            <ion-card-title>
+                               Descripción
+                            </ion-card-title>
+                            <span class="course_instructor">{{course.Descripcion}}</span>
+                        </ion-card-content>
+                      </ion-grid>
+                  </div>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+           
+        </div>
+    </div>
+  </div>
+  
+</ion-content>

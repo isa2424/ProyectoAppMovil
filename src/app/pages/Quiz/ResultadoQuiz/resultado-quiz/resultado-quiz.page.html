@@ -1,0 +1,131 @@
+<ion-header class="Header" no-shadow no-border>
+  <ion-toolbar color="trasnparent" no-border>
+    <ion-buttons slot="start">
+      <ion-icon class="IconoRegresar" name="arrow-back" (click)="Regresar()" ></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fixedscrollheader>
+  <div  class="DivPrincipal"> 
+    <div class="Div3" *ngIf="percentage < 75">
+      <img   src="assets/images/ImagenesAppMovil/Favoritos/Triste.png"  >
+      <h2>
+        Mala Suerte
+      </h2>
+      <p>
+        Tiene poco conocimiento sobre la tecnología,Pero tranquilo aprenderas con el contenido que te compartiremos en la aplicación!
+      </p>
+      <ion-button (click)="Regresar()">
+        Cursos Disponibles
+        <ion-icon  name="arrow-forward"  ></ion-icon>
+      </ion-button>
+    </div>
+    <div class="Div3" *ngIf="percentage >= 75">
+      <img   src="assets/images/ImagenesAppMovil/Felicidades.png"  >
+      <h2>
+        Felicidades
+      </h2>
+      <p>
+       Su conocimiento sobre la tecnología es excelente!
+      </p>
+      
+      <ion-button (click)="Regresar()">
+        Cursos Disponibles
+        <ion-icon  name="arrow-forward"  ></ion-icon>
+      </ion-button>
+    </div>
+
+    
+  </div>
+  <div class="DivCursosPrincipal">
+    <div class="DivCurso">
+      <div style="width: 100%;">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <ion-row class="InformacionCurso">
+        <ion-col no-padding>
+          
+          <h2 class="Resultados">Resultados  </h2>
+          <h2 class="Score">Tu Puntuación es {{NumeroPreguntasCorrectas}} de {{TotalPreguntas}} Preguntas correctas</h2>
+          <h2 class="TiempoQuiz">Tu completaste el cuestionario en {{elapsedMinutes}} minutos y {{elapsedSeconds}} Segundos</h2>
+        </ion-col>
+      </ion-row>
+      <section class="quizSummary">
+        <details>
+          <summary>Ver un resumen más detallado de su cuestionario</summary>
+            <ion-row class="Quiz"  *ngFor="let Preguntas of TodasPreguntas;let i = index">
+
+              
+                  <ion-item class="Item {{Preguntas.EsCorrecto}}" (click)="toggleDetails(i)">
+                    
+                    <ion-col size="3.5" >
+                      <ion-card-content    class="CardTitulo">
+                        <ion-card-title class="Titulo">
+                           Pregunta#{{Preguntas.Id_PreguntaQuiz}}:
+                        </ion-card-title>
+                    </ion-card-content>
+                    </ion-col>
+                    <ion-col  >
+                        <ion-card-content  class="CardDescripcion"  >
+                            <ion-card-title class="Descripcion">
+                               {{Preguntas.Pregunta}} 
+                            </ion-card-title>
+                           
+                        </ion-card-content>
+                    </ion-col>
+                  </ion-item>
+                  <div *ngIf="Preguntas.toggle" class="Respuestas">
+                    <div class="RespuestasBordes">
+                      <div style="text-align: left;">
+                        <span class="SubTitulo">
+                          <span class="Titulo">Pregunta #{{Preguntas.Id_PreguntaQuiz}}: </span>  {{Preguntas.Pregunta}} 
+                        </span>
+                      </div>
+                      <div style="text-align: left;">
+                        
+                        <span class="SubTitulo" *ngIf="Preguntas.SeleccionRespuestaSecundario=='' || Preguntas.SeleccionRespuestaSecundario==null">
+                          <span class="Titulo">Tu Respuesta: </span>
+                          Mala Suerte &mdash; No contesto la pregunta
+                          
+                          
+                        </span>
+                        <span class="SubTitulo"*ngIf="Preguntas.SeleccionRespuestaSecundario!='' && Preguntas.SeleccionRespuestaSecundario!=null">
+                          <span class="Titulo">Tu Respuesta: </span>
+                          Opción {{ Preguntas.SeleccionRespuestaSecundario }} &mdash; {{ Preguntas.Opcion[Preguntas.SeleccionRespuestaSecundario-1].OpcionRespuesta }}
+                          
+                          
+                        </span>
+                      </div>
+                      <!--
+                         <div style="text-align: left;">
+                        <span class="SubTitulo">
+                          <span class="Titulo">Respuesta Correcta: </span>
+                          Option#{{ Preguntas.RespuestaCorrecta }} &mdash; {{ Preguntas.Opcion[Preguntas.RespuestaCorrecta-1 ].OpcionRespuesta }}
+                        </span>
+                      </div>
+                      <div style="text-align: left;">
+                        <span class="SubTitulo">
+                          <span class="Titulo">Explicación: </span>
+                          Option#{{ Preguntas.RespuestaCorrecta }} Es la respuesta correcta porque {{ Preguntas.Explicacion }}
+                        </span>
+                      </div>
+
+                      -->
+                     
+                    </div>
+                    
+                  </div>
+            </ion-row>
+       
+        </details>
+      </section>
+
+    </div>
+  </div>
+  
+</ion-content>
+
+
+
+

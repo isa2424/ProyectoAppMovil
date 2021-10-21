@@ -1,0 +1,25 @@
+#menu-material {
+  .menu-header {
+    padding: 100px 5px;
+    background-image: url('../assets/imgs/Fondo.png');
+    background-size: cover;
+    color: white;
+  }
+
+  ion-icon {
+    color: #777;
+  }
+}
+@import "../theme/common.scss";
+
+.TabBar{
+  --background: #f18c8e;;
+  ion-tab-button{
+    ion-icon{
+      color: #fff;
+    }
+    ion-label{
+      color: #fff;
+    }
+  }
+}

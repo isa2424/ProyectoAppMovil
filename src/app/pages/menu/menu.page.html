@@ -1,0 +1,112 @@
+
+<ion-header  class="Header">
+ 
+ <ion-toolbar color="trasnparent">
+    <ion-buttons   menu-id="menuAdmin" slot="end">
+      <ion-menu-button size="small" shape="round" color="black"></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>Arte Digital<span ></span></ion-title>
+   
+  <ion-buttons slot="end" (click)="Categorias()">
+    <ion-button size="small" shape="round" color="black" >
+      <ion-icon name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-buttons slot="end">
+    <ion-button size="small" shape="round" color="black" (click)="Perfil()" >
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fixedscrollheader>
+  <div  class="DivPrincipal"> 
+    <div class="DivImagen1">
+      <img  class="Img1" src="assets/images/ImagenesAppMovil/Menu/Blob 1.png"  >
+    </div>
+    <div class="DivImagen2">
+      <img  class="Img2" src="assets/images/ImagenesAppMovil/Menu/Blob 2.png"  >
+    </div>
+    <h2>
+      Bienvenido
+
+    </h2>
+    <div class="Div3">
+      
+      <img  class="Img3" src="assets/images/ImagenesAppMovil/Menu/Chico.png"  >
+    </div>
+    <div class="DivSecundario">
+      <div >
+        
+        <h2>¡Empiece a aprender nuevo material!</h2>
+        <ion-button (click)="Categorias()">
+          Categorias
+          <ion-icon  name="arrow-forward"  ></ion-icon>
+        </ion-button>
+        <img   src="assets/images/ImagenesAppMovil/Menu/Chica.png"  >
+      </div>
+    </div>
+  </div>
+  <div class="DivCursosPrincipal">
+    <div class="DivCurso">
+      <div style="width: 100%;">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <div id="homecontent" padding>
+        <h3 class="heading">
+          
+          <span>Categoria</span>
+          <span>Vista de Todas las Categorias</span>
+        </h3>
+        <ion-slides   [options]="slideOptsTwo" id="categories" >
+            <ion-slide *ngFor="let item of data">
+                <ion-card >
+                  <div class="featured_category_block" (click)="Cursos(item.CantidadCurso,item.Id_Categoria)">
+                      
+                      <img  src="http://localhost/ProyectoIsabel/Imagenes/Categorias/{{item.Foto}}">
+                      
+                      <div class="category-content">
+                        <div class="category-title">{{item.Titulo}}</div>
+                        <div class="category-subtitle" *ngIf="item.CantidadCurso == null">0 Cursos</div>
+                        <div class="category-subtitle" *ngIf="item.CantidadCurso != null">{{item.CantidadCurso}} Cursos</div>
+                    </div>
+                      </div>
+                  </ion-card>
+            </ion-slide>
+        </ion-slides>
+    
+        
+      </div> 
+      <!--
+<div id="homecontent" padding>
+        <h3 class="heading">
+          
+          <span>Populares</span>
+          <span>Vista de cursos Populares</span>
+        </h3>
+        <ion-slides   [options]="slideOptsTwo" id="categories" >
+            <ion-slide *ngFor="let item of data">
+                <ion-card >
+                  <div class="featured_category_block" (click)="Cursos(item.Id_Categoria)">
+                      <img  src="data:image/png;base64,{{item.Foto}}">
+                      <div class="category-content">
+                        <div class="category-title">{{item.Titulo}}</div>
+                        <div class="category-subtitle">{{item.SubTitulo}} </div>
+                    </div>
+                      </div>
+                  </ion-card>
+            </ion-slide>
+        </ion-slides>
+      </div> 
+
+      -->
+      
+    </div>
+  </div>
+</ion-content>

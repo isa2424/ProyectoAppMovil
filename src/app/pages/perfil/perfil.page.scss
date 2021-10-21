@@ -1,0 +1,339 @@
+ion-header.loggedin{
+    ion-toolbar{
+        background-color:  #f18c8e;
+        --background:  #f18c8e;
+    }
+    ion-buttons{
+        position: absolute;
+        color: white;
+        ion-icon{
+            font-size:2rem;
+        }
+    }
+    .toolbar-title{
+        padding:0;
+    }
+}
+
+.user_intro{
+      text-align:center;
+      .avatar{
+          position:relative;
+          margin:0 auto;
+          display:block;
+          height:30vh;
+          text-align: center;
+          padding: 32px;
+          height: 160px;
+            div{
+                height:100%;  
+               
+            }
+            img{
+                height: 118px;
+                width: 118px;
+                border-radius: 50%;
+                border: solid 4px #fff;
+                display: inline;
+                box-shadow: 0 0 28px rgba(255,255,255, .65);
+            }
+          
+      }
+      h1{
+          color:#fff;
+          text-transform:uppercase;
+          font-size:16px;
+          margin:0;
+          padding:10px 0;
+          span{
+              text-transform:none;
+              display:block;
+              font-size:1rem;
+              opacity:0.8;
+          }
+          &+button{
+            background-color: transparent;
+            color: white;
+            position: fixed;
+            top: 5px;
+            right: 0px;
+            ion-icon{
+                font-size:2rem;
+            }
+        }
+      }
+}
+
+
+
+#profiletabs{
+.profile_tab{
+    font-size: 2rem;
+    margin: -1px;
+    padding: 10px 8px;
+    color: #fff;
+    
+    background:#f18c8e;
+    span{
+        display: block;
+        font-size: 0.8rem;white-space:nowrap;
+        //text-transform: uppercase;
+    }
+}
+}
+ion-slides{
+    &[slidesperview="2"] ion-slide{
+      max-width:45vw;
+    }
+    &[slidesperview="3"] ion-slide{
+      max-width:30vw;
+    }
+    &[slidesperview="4"] ion-slide{
+      max-width:22vw;
+    }
+  }
+
+ion-content.loggedin{
+    background:#fff;
+}
+#profilecontent{
+    position:relative;
+    ion-refresher{
+        position:absolute;
+        top:30px !important;
+        div{
+            opacity:0.6;
+            font-size:1.2rem;
+            font-weight:600;
+            letter-spacing:1px;
+        }
+    }
+}
+#profilelides{
+    margin-top:41px;
+    & > .swiper-container >.swiper-slide{
+        padding-top:10px;
+    }
+}
+#profiletabs{
+    .list-header{
+        padding: 0;
+        border-bottom: 2px solid #eee;
+        opacity: 0.4;
+        background:none;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .item{
+        font-size: 1.4rem;
+        padding:0;
+        .item-inner{
+            border-color: rgb(223, 144, 27);
+            label{
+                text-transform:uppercase;
+            }
+        }
+    }
+}
+.profile {
+     color:#fff;
+     --background: #ffff;
+    .Div3{
+        text-align: center;
+        
+        
+        img{
+            width: 250.3px;
+            height: 125px;
+            margin-top: 10%;
+        }
+        h2{
+            font-family: Poppins;
+            font-weight: 600;
+            font-size: 25px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: rgb(0, 0, 0);
+    
+        }
+        p{
+            width: 291px;
+            height: 53px;
+            font-family: Poppins;
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            line-height: 18px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin: auto;
+    
+        }
+        
+      }
+   
+    ion-item {
+      ion-input {
+        border-bottom: 1px solid var(--ion-color-tertiary);
+      }
+    }
+  
+    ion-buttom {
+      button {
+        margin: 0;
+      }
+    }
+    ion-icon{
+        margin-right: 5px
+    }
+  }
+
+
+  #mycourses{
+    .card{
+        position:relative;
+        padding-bottom:20px;
+        span.course_user_status{
+            position:absolute;
+            bottom:0;
+            left:0;
+            background:var(--ion-color-primary);
+            display:block;
+            width:100%;
+            text-align:center;
+            color:#fff;
+            padding:5px;
+            font-size:1.4rem;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+    }
+   
+}
+
+
+
+
+
+/*Dashboard*/
+#dashboard{
+  margin:-10px;
+  width:auto;
+  ion-col > div{
+      padding: 15px 0;
+      text-transform: uppercase;
+      text-align: center;
+      border: 1px solid #ddd;
+      background: #eee;
+      strong{font-size: 3rem;}
+      span{display: block;font-size: 1rem;}
+  }
+}
+.Item1{
+    width: 100%;
+  margin-top: 3%;
+  border-radius: 25px;
+  --background: #ffe9f9;
+  opacity: 0.9;
+}
+.Item2{
+  width: 100%;
+  margin-top: 3%;
+border-radius: 25px;
+--background: #eaf9fe;    
+opacity: 0.9;
+}
+.Item3{
+  width: 100%;
+  margin-top: 3%;
+border-radius: 25px;
+--background: #fff5e5; 
+opacity: 0.9;
+}
+.Item4{
+  width: 100%;
+  margin-top: 3%;
+border-radius: 25px;
+--background: #fff1ef;
+opacity: 0.9;
+width: 100%;
+}
+.Item5{
+  width: 100%;
+margin-top: 3%;
+border-radius: 25px;
+--background: #e9ebff;
+opacity: 0.9;
+}
+.Item6{
+width: 100%;
+margin-top: 3%;
+border-radius: 25px;
+--background: #eafeee;    
+opacity: 0.9;
+}
+.Item7{
+width: 100%;
+margin-top: 3%;
+border-radius: 25px;
+--background: #ffe5e5; 
+opacity: 0.9;
+}
+.Item8{
+width: 100%;
+margin-top: 3%;
+border-radius: 25px;
+--background: #fff1ef;
+opacity: 0.9;
+width: 100%;
+}
+.Item9{
+  width: 100%;
+  margin-top: 3%;
+border-radius: 25px;
+--background: #fff5e5; 
+opacity: 0.9;
+}
+.Item10{
+  width: 100%;
+  margin-top: 3%;
+border-radius: 25px;
+--background: #f4efff;
+opacity: 0.9;
+width: 100%;
+}
+.DivColum1{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: #f18c8e;
+    opacity: 0.2;
+    
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000;
+
+  }
+  .DivColum2{
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left;
+    color: #305f72;
+    
+
+  }
+  h2{
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: left;
+    color: #f18c8e;
+
+}

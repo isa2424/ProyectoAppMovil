@@ -1,0 +1,189 @@
+<ion-header class="Header" no-shadow no-border>
+  <ion-toolbar color="trasnparent" no-border>
+    <ion-buttons  start>
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content elastic-header fixedscrollheader>
+  <div  class="DivPrincipal"> 
+    <div class="DivImagen1">
+      <img  class="Img1" src="assets/images/ImagenesAppMovil/Menu/Blob 1.png"  >
+    </div>
+    <div class="DivImagen2">
+      <img  class="Img2" src="assets/images/ImagenesAppMovil/Menu/Blob 2.png"  >
+    </div>
+    <h2>
+      Información del Curso
+    </h2>
+  </div>
+  <div class="DivCursosPrincipal">
+    <div class="DivCurso">
+      <div style="width: 100%;">
+        <div slot="center" style="width: 78px; height: 6px; border-radius: 3px; background: #eee; margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <ion-slides [options]="slideOptsTwo"  #ProfileTabs id="profiletabs"  (ionSlideDidChange)="onTabChanged()" >
+        <ion-slide  (click)="selectedTab(0)">
+          <div class="profile_tab">
+              
+              <span>Información</span>
+          </div>
+        </ion-slide>
+        <ion-slide  (click)="selectedTab(1)">
+          <div class="profile_tab">
+             
+              <span>Instrucciones</span>
+          </div>
+        </ion-slide>
+    </ion-slides>
+    
+  <ion-slides  #ProfileSlides >
+    <ion-slide >
+      
+      <div class="Contenido">
+        <div class="Autor">
+        
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3" >
+                  <div >
+                    <img  src="http://localhost/ProyectoIsabel/Imagenes/Usuarios/{{data.Foto}} ">
+                   
+                  </div>
+              </ion-col>
+              <ion-col  >
+                  <ion-card-content  >
+                      <ion-card-title>
+                        
+                          {{data.Nombres +" "+ data.Apellidos}}
+                      </ion-card-title>
+                      
+                      <ion-grid>
+                        <ion-row>
+                          <ion-col size="7">
+                            <star-rating [rating]="3"></star-rating>
+                          </ion-col>
+                          <ion-col>
+                            <ion-icon  style="font-size: 25px;" class="people" name="people"></ion-icon>
+                          </ion-col>
+                          <ion-col>
+                            <p style="font-family: Lato;
+                            font-weight: 300;
+                            font-size: 20px;
+                            line-height: 22px;
+                            text-align: left;
+                            color: #f18c8e;
+                            ">{{data.Estudiantes}}</p>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                      
+                     
+                  </ion-card-content>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+          
+        </ion-row>
+          </ion-grid>
+          
+        </div>
+        <div class="TituloContenido">
+          Información del Curso
+        </div>
+        <h2  style="font-family: Lato;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 22px;
+        text-align: left ;
+        color: #305f72;">Tema:{{ data.TituloCurso }}</h2>
+          <p style="font-family: Lato;
+          
+          font-size: 15px;
+          
+          text-align: justify ;
+          color: #050505;"  >{{ data.DescripcionCurso }}</p>
+        <div class="TituloContenido">
+          Contenido del Curso
+        </div>
+        <ion-grid>
+          <ion-row *ngFor="let datos of data.ContenidoCurso;let i = index">
+            <ion-item class="Item{{i+1}}">
+              <ion-col size="2" >
+                <ion-card-content  >
+                  <ion-card-title class="DivColum1">
+                      {{i+1}}
+                  </ion-card-title>
+              </ion-card-content>
+              </ion-col>
+              <ion-col  >
+                  <ion-card-content  >
+                      <ion-card-title class="DivColum2">
+                          Tema {{i+1}}.- 
+                      </ion-card-title>
+                      <h2>{{datos.Titulo}}</h2>
+                  </ion-card-content>
+              </ion-col>
+              <ion-col size="2" >
+                <div>
+                  <ion-button style="    width: 45px;
+                  height: 45px;
+                  --background: #f18c8e;
+                  --border-radius: 27px;">
+                  <ion-icon  name="play-circle" ></ion-icon>
+                </ion-button>
+                </div>
+                
+            </ion-col>
+            </ion-item>
+            
+          </ion-row>
+          <ion-item class="Item4">
+            
+            <ion-col  >
+                <ion-card-content  >
+                    <ion-card-title class="DivColum2">
+                        Quiz.- 
+                    </ion-card-title>
+                    <h2>Examen Final</h2>
+                </ion-card-content>
+            </ion-col>
+           
+          </ion-item>
+      </ion-grid>
+      </div> 
+    </ion-slide>
+  
+    <ion-slide >
+      <div class="Contenido">
+        <div class="TituloContenido">
+          Instrucciones del Curso
+        </div>
+        <div class="Reglas">
+          Reglas
+        </div>
+        <div class="Reglas1">
+          Num#1:El máximo intento seran 2 caso contrario volverá iniciar el curso
+        </div>
+        <div class="Reglas1">
+          Num#2:Cada pregunta cuenta con 15 segundos para ser respondida
+        </div>
+        <div class="Reglas1">
+          Num#3:La nota mínima para aprobar el curso debe ser el mínimo 75/100
+        </div>
+        <div class="Reglas1">
+          Num#4:Aprobación con certificación del curso
+        </div>
+      </div> 
+      
+    </ion-slide>  
+  </ion-slides>
+    </div>
+  </div>
+<div>
+  <button id="course_button"  ion-button icon-left  (click)="TutorialVideos() ">{{ButtonText}} </button> <!-- "-->
+</div>
+ 
+
+</ion-content>

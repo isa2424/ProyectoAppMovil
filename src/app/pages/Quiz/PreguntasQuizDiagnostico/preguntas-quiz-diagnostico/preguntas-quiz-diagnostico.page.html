@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>PreguntasQuiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+        <ion-col  class="NumerosPreguntas">
+          <div class="ItemDiv2" >
+            <h2 >Puntución</h2>
+             <p >{{ NumeroPreguntasCorrectas }}/{{ TotalPreguntas }}</p>
+          </div>
+      </ion-col>
+        <ion-col  class="NumerosPreguntas">
+            <div class="ItemDiv2" *ngIf="Preguntas && Preguntas.Id_PreguntaQuiz <= TotalPreguntas" >
+              <h2 >Pregunta</h2>
+               <p >{{ Preguntas.Id_PreguntaQuiz }} de {{ TotalPreguntas }}</p>
+            </div>
+        </ion-col>
+        <ion-col class="Tiempo" >
+          <div class="ItemDiv2" >
+            <h2 >Tiempo:</h2>
+            <div class="ItemDiv1">
+              <h2 >{{ Tiempo}}</h2>
+            </div>
+          </div>
+          
+        </ion-col>
+    </ion-row>
+</ion-grid>
+  <div >
+    <div class="Div1">
+      <h2 id="question" >
+        {{ Preguntas.Pregunta }}
+      </h2>
+    </div>
+  </div>
+  <formulario-quiz-diagnostico [Preguntas]="Preguntas"></formulario-quiz-diagnostico>
+  <progress-bar [progress]="progressValue" >
+  </progress-bar>
+</ion-content>

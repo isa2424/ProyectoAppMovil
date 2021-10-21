@@ -1,0 +1,454 @@
+@import "../../../../theme/common/misc/multi-line-ellipsis.scss";
+
+$player-controls-height: 40px;
+$player-play-icon-height: 6rem;
+$playlist-item-font-size: 12px;
+$playlist-item-play-icon-height: 2rem;
+
+@mixin play-icon-styles($background, $size, $color){
+	&:before {
+		font-family: "Ionicons";
+		// As the play arrow ('\f487' in Ionicons font) is a weird shape, we need to use a hack to visually center horizontally.
+		// We are going to prepend the 1/6 of em unicode ('\2006'). More info here: (http://www.cs.tut.fi/~jkorpela/chars/spaces.html)
+		content: url(../../../../../node_modules/ionicons/dist/svg/play-circle.svg);
+		
+		font-size: $size - 1;
+		width: $size;
+		height: $size;  
+		line-height: $size;
+		text-align: center;
+		border-radius: 50%;
+		background-color: $color;
+	}
+}
+
+
+
+	.video-player-container {
+		// Most videos come in 16:9 aspect ratio
+		// If 16 -> 100% width => 9 -> 56.25% width
+		padding-bottom: 56.25%;
+		position: relative;
+		height: 0px;
+
+		vg-player.video-player {
+		  font-family: "Ionicons";
+			position: absolute;
+
+			video {
+				&.expand-horizontally
+				{
+					width: 100%;
+				}
+
+				&.expand-vertically
+				{
+					height: 100%;
+				}
+			}
+
+			// Player styles
+			vg-buffering {
+				.vg-buffering
+				{
+					.loadingSpinner
+					{
+						border-right-color:  #ae75e7;
+						border-bottom-color:  #ae75e7;
+						box-shadow: none;
+					}
+				}
+			}
+
+			vg-overlay-play {
+				.overlay-play-container.vg-icon-play_arrow
+				{
+					
+					@include play-icon-styles(#FFFFFF, $player-play-icon-height,  #ae75e7);
+
+					&:before {
+						// To make the icon vertically centered excluding the controls height
+						margin-bottom: $player-controls-height;
+					}
+				}
+			}
+
+			vg-controls {
+				background: #f18c8e;;
+				height: $player-controls-height;
+
+				.controls-row
+				{
+					width: 100%;
+					height: 100%;
+					vg-fullscreen{
+						height: 100%;
+					  //width: 100%;
+					  
+						font-size: 1.2rem;
+						font-weight: 500;
+						margin: auto;
+					}
+					vg-time-display {
+						height: 100%;
+					  //width: 100%;
+					  line-height: $player-controls-height;
+						font-size: 1.2rem;
+						font-weight: 500;
+						margin: auto;
+					}
+
+					vg-scrub-bar {
+						height: 100%;
+						position: absolute;
+				  	margin: 0px;
+
+						vg-scrub-bar-current-time {
+							background-color: lighten(rgba(#000000, .8), 20%);
+							height: 3px;
+
+							.background
+							{
+								background-color: #00e9d5;
+								border: none;
+							  z-index: 3;
+								position: relative;
+
+								&::after{
+									content:'';
+									position: absolute;
+									top: -8px;
+								  right: -10px;
+								  width: 20px;
+								  height: 20px;
+								  border-radius: 50%;
+								  background: #fff;
+								  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.13), 0 0 0 1px rgba(0, 0, 0, 0.02);
+								  pointer-events: none;
+								}
+							}
+						}
+
+						vg-scrub-bar-buffering-time {
+							height: 3px;
+
+							.background
+							{
+								background-color: darken(#FFFFFF, 24%);
+							}
+						}
+					}
+
+					ion-col:first-child {
+						vg-time-display {
+							margin: auto;
+						}
+					}
+					ion-col:last-child {
+						vg-time-display {
+							margin: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	
+	
+  .Header{
+    background-color:#f18c8e ;
+}
+
+
+  .DivPrincipal{
+ 
+	//height: 220px;
+	background: #f18c8e;
+	
+	}
+	
+  
+  .DivCursosPrincipal{
+	height: 90%;
+	background: #f18c8e;
+	.DivCurso{
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 64px 64px 0px 0px;
+	  background: rgb(255, 255, 255);
+	  
+	  
+	}
+  }
+  
+  
+
+  .InformacionVideo
+	{
+		padding: 20px;
+		.Autor{
+			width: 317px;
+			
+			background: transparent;
+			
+			margin-left: auto;
+			margin-right: auto;
+			
+			border-radius: 12px;
+			background: #fff;
+			border: 1px solid #f18c8e;
+	
+			img{
+				width: 75px;
+				height: 75px;
+				border-radius: 35.5px;
+				border: 3px solid #f18c8e;
+			}
+			ion-card-title{
+				font-family: Lato;
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 22px;
+				text-align: left;
+				color: #305f72;
+	
+			}
+		  }
+		.video-title
+		{
+			margin: 5px 0px 5px;
+			font-family: Lato;
+				font-weight: bold;
+				font-size: 15px;
+				line-height: 22px;
+				text-align: left;
+				color: #305f72;
+
+		  
+		}
+
+		.video-description
+		{
+			letter-spacing: 0.2px;
+			margin: 0px 0px 6px;
+			font-family: Lato;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 20px;
+			text-align: justify;
+			color: #000000;
+		}
+	}
+	.Contenido{
+		.TituloContenido{
+		  font-family: Lato;
+		  font-weight: bold;
+		  font-size: 18px;
+		  line-height: 22px;
+		  text-align: center;
+		  color: #305f72;
+		  margin-top: 5%;
+		}
+		.DivColum1{
+		  width: 30px;
+		  height: 30px;
+		  border-radius: 7px;
+		  background: #f18c8e;
+		  opacity: 0.2;
+		  
+		  font-family: Lato;
+		  font-weight: bold;
+		  font-size: 18px;
+		  line-height: 22px;
+		  text-align: center;
+		  color: #000;
+  
+		}
+		.Titulo{
+		  font-family: Lato;
+		  font-weight: bold;
+		  font-size: 15px;
+		  line-height: 22px;
+		  text-align: left;
+		  color: #305f72;
+		  
+  
+		}
+		
+			
+		.Description{
+		letter-spacing: 0.4px;
+		  font-family: Lato;
+		  font-weight: 300;
+		  font-size: 12px;
+		  line-height: 22px;
+		  text-align: left;
+		  color: #f18c8e;
+		  @include multi-line-ellipsis($playlist-item-font-size);
+  
+	  }
+	  .Disponible{
+		letter-spacing: 0.4px;
+		font-family: Lato;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 22px;
+		text-align: left;
+		color: #03f738;
+	}
+	.NoDisponible{
+		letter-spacing: 0.4px;
+		font-family: Lato;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 22px;
+		text-align: left;
+		color: #fa0509;
+	}
+	}
+	.Item1{
+		width: 100%;
+	  margin-top: 3%;
+	  border-radius: 25px;
+	  --background: #ffe9f9;
+	  opacity: 0.9;
+  }
+  .Item2{
+	  width: 100%;
+	  margin-top: 3%;
+  border-radius: 25px;
+  --background: #eaf9fe;    
+  opacity: 0.9;
+  }
+  .Item3{
+	  width: 100%;
+	  margin-top: 3%;
+  border-radius: 25px;
+  --background: #fff5e5; 
+  opacity: 0.9;
+  }
+  .Item4{
+	  width: 100%;
+	  margin-top: 3%;
+  border-radius: 25px;
+  --background: #fff1ef;
+  opacity: 0.9;
+  width: 100%;
+  }
+  .Item5{
+	  width: 100%;
+	margin-top: 3%;
+	border-radius: 25px;
+	--background: #e9ebff;
+	opacity: 0.9;
+  }
+  .Item6{
+	width: 100%;
+	margin-top: 3%;
+  border-radius: 25px;
+  --background: #eafeee;    
+  opacity: 0.9;
+  }
+  .Item7{
+	width: 100%;
+	margin-top: 3%;
+  border-radius: 25px;
+  --background: #ffe5e5; 
+  opacity: 0.9;
+  }
+  .Item8{
+	width: 100%;
+	margin-top: 3%;
+  border-radius: 25px;
+  --background: #fff1ef;
+  opacity: 0.9;
+  width: 100%;
+  }
+  .Item9{
+	  width: 100%;
+	  margin-top: 3%;
+	border-radius: 25px;
+	--background: #fff5e5; 
+	opacity: 0.9;
+	}
+	.Item10{
+	  width: 100%;
+	  margin-top: 3%;
+	border-radius: 25px;
+	--background: #f4efff;
+	opacity: 0.9;
+	width: 100%;
+	}
+	
+	  
+
+	
+
+	.ContenidoVideos{
+		.media-thumbnail{
+			height:100%;
+			width: 100%;
+			
+			//margin: 4px 4px 4px 0;
+		  position: relative;
+			
+			.media-thumbnail-image
+			{
+				height:100%;
+			width: 100%;
+				padding-bottom: 0%;
+				@include play-icon-styles(#FFFFFF, $playlist-item-play-icon-height,  #f18c8e);
+				
+				&:before {
+					visibility: hidden;
+					position: absolute;
+				  z-index: 4;
+					top: calc(50% - #{($playlist-item-play-icon-height/2)});
+				  left: calc(50% - #{($playlist-item-play-icon-height/2)});
+				}
+	
+				&.img-loaded
+				{
+					&:before {
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+	.Quiz{
+		.Item1{
+			margin-top: 3%;
+			border-radius: 25px;
+			--background: #d1f3c6;
+			opacity: 0.9;
+			width: 100%;
+		}
+		.Titulo{
+			font-family: Lato;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 22px;
+			text-align: left;
+			color: #305f72;
+		}
+		.Tiempo{
+			letter-spacing: 0.4px;
+		  font-family: Lato;
+		  font-weight: 300;
+		  font-size: 12px;
+		  line-height: 22px;
+		  text-align: left;
+		  color: #111111;
+		}
+		.Estado{
+			letter-spacing: 0.4px;
+		  font-family: Lato;
+		  font-weight: 300;
+		  font-size: 12px;
+		  line-height: 22px;
+		  text-align: left;
+		  color: #fa0509;
+		}
+	}

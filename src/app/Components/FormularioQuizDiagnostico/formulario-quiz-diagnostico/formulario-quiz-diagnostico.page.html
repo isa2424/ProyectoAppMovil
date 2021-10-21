@@ -1,0 +1,30 @@
+<ng-content></ng-content>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <ion-grid>
+    <ion-row   >
+      <ion-radio-group style="width: 100%;" formControlName="answer" name="answer" (ionChange)="radioChange($event.target.value)">
+            <ion-item class="Item" *ngFor="let option of Preguntas.Opcion;let i = index" >
+              <ion-col size="3" >  
+                <div class="ItemDiv1" >
+                  <h2 >{{i+1}}</h2>
+                </div>
+              </ion-col>
+              <ion-col radio  > 
+                <div class="ItemDiv2" >
+                  <h2 >Respuesta:</h2>
+                   <p id="Option{{i+1}}">{{ option.OpcionRespuesta }}</p>
+                  
+                </div>
+              </ion-col>
+              <ion-radio slot="start" name="option-radio-button"  [value]="option.OpcionNumero" checked="Preguntas.SeleccionRespuestaPrincipal == option" ></ion-radio>
+             <!-- <ion-radio slot="start" name="option-radio-button"  [value]="option.OpcionNumero" checked="Preguntas.SeleccionRespuestaPrincipal == option" [ngClass]="{'is-correct': isCorrect(option.OpcionNumero),
+              'is-incorrect': isIncorrect(option.OpcionNumero)}"></ion-radio>-->
+            </ion-item>
+
+      </ion-radio-group>
+     
+      
+      
+    </ion-row>
+  </ion-grid>
+</form>

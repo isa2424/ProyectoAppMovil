@@ -1,0 +1,1 @@
+export function isPresent(val: any): val is any { return val !== undefined && val !== null; }

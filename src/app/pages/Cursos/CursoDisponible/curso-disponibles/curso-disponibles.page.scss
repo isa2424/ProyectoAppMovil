@@ -1,0 +1,184 @@
+@mixin play-icon-styles( $color){
+	&:before{
+        content:url(../../../../../../node_modules/ionicons/dist/svg/heart-outline.svg);
+        font-family:"Ionicons";
+        
+    }
+    &.Activado1{
+        opacity:1;
+        &:before{
+            content:url(../../../../../../node_modules/ionicons/dist/svg/heart.svg);
+            
+        }
+    }
+}
+
+
+#all_courses{
+    .Card0{
+    
+                border-radius: 25px;
+                background: #ffe9f9;
+    }
+    .Card1{
+    
+        border-radius: 25px;
+        background: #eaf9fe;    
+    }
+    .Card2{
+    
+        border-radius: 25px;
+        background: #fff5e5; 
+    }
+    .Card3{
+    
+        border-radius: 25px;
+        background: #fff1ef;
+        
+    }
+    .Card4{
+    
+        border-radius: 25px;
+        background: #e9ecff;
+    }
+    .Card5{
+
+    border-radius: 25px;
+    background: #feebea;    
+    }
+    .Card6{
+
+    border-radius: 25px;
+    background: #e7ffe5; 
+    }
+    .Card7{
+
+    border-radius: 25px;
+    background: #ffeffe;
+
+    }
+    
+    .wishlist{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 2rem;
+        opacity: 0.5;
+        z-index:99;
+        font-family:"Ionicons";
+        @include play-icon-styles( #ae75e7);
+        
+       
+    }
+
+
+}
+.IconoRegresar{
+    font-size:1.5rem;
+
+}
+		
+
+
+.course_block{
+    
+    
+
+    margin-bottom: -1px;
+    .course_featured_image{
+        overflow: hidden;
+        //margin: -10px;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%; --border-radius: 10px;  margin-bottom: -28px;
+        }
+    }
+    .card{
+        background:rgba(255,255,255,0.95);
+    }
+    
+    ion-card-content{
+        float:left;
+        ion-card-title{
+            font-size: 1rem;
+            font-weight:600;
+            margin: 0;
+            padding: 0;
+        }
+        ion-icon{font-size:1.6rem;}
+        .star-rating{line-height:2rem;}
+        .course_instructor{
+            font-size:1rem;
+            opacity:0.6;
+            display:block;
+        }
+        .course_price{
+            color:#70c989;
+            display:block;
+        }
+        .course_price1{
+            color:#e62323;
+            display:block;
+        }
+    }
+}	
+
+.Header{
+    background-color:#f18c8e ;
+}
+.DivPrincipal{
+ 
+    height: 250px;
+    background: #f18c8e;
+    h2{
+        font-family: Lato;
+        font-weight: 900;
+        font-size: 34px;
+        line-height: 41px;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        margin-left: auto;
+        margin-top: 30%;
+        margin-right: auto;
+       
+        width: 100%;
+    }
+    .DivImagen1{
+      width: 100%;
+      position: absolute;
+      text-align: start;
+      .Img1{
+        
+        width: 68%;
+        margin-left: -20%;
+        
+        margin-top: -15%;
+      }
+    }
+    .DivImagen2{
+      width: 100%;
+      position: absolute;
+      text-align: end;
+      .Img2{
+        width: 80%;
+        height: 39%;
+        margin-top: -37%;
+        margin-right: -27%;
+      }
+    }
+    
+  }
+  .DivCursosPrincipal{
+    height: 90%;
+    background: #f18c8e ;
+    .DivCurso{
+      width: 100%;
+      height: 100%;
+      border-radius: 64px 64px 0px 0px;
+      background: rgb(255, 255, 255);
+      
+      
+    }
+  }

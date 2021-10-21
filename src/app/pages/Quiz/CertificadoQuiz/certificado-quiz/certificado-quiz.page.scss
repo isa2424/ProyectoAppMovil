@@ -1,0 +1,214 @@
+.Header{
+    background-color:#f18c8e ;
+}
+ion-content{
+    text-align: center;
+.DivPrincipal{
+ 
+    height: 400px;
+    background: bisque;
+    .Div3{
+        text-align: center;
+        width: 100%;
+        height: 383px;
+        border-radius: 0px 0px 45px 45px;
+        
+        background: #f18c8e;
+        
+        img{
+            width: 250.3px;
+            height: 125px;
+            margin-top: 10%;
+        }
+        h2{
+            font-family: Poppins;
+            font-weight: 600;
+            font-size: 25px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #fff;
+    
+        }
+        p{
+            width: 291px;
+            height: 53px;
+            font-family: Poppins;
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            line-height: 18px;
+            text-align: center;
+            color: #fff;
+            margin: auto;
+    
+        }
+        ion-button{
+            //Efecto de letras
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #fd7e77;
+    
+    
+           //Efecto del boton
+            --border-radius: 20.5px;
+            --background: #fff;
+            --box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+            
+    
+    
+        }
+      }
+  }
+  .DivCursosPrincipal{
+    height: 90%;
+    background: bisque;
+    .DivCurso{
+      width: 100%;
+      height: 100%;
+      border-radius: 64px 64px 0px 0px;
+      background: rgb(255, 255, 255);
+      
+      
+    }
+  }
+  .InformacionCurso
+	{
+        padding: 20px;
+        margin: auto;
+		.Autor{
+			width: 317px;
+			
+			background: transparent;
+			
+			margin-left: auto;
+			margin-right: auto;
+			
+			border-radius: 12px;
+			background: #fff;
+			border: 1px solid #f18c8e;
+	
+			img{
+				width: 45px;
+				height: 45px;
+				border-radius: 35.5px;
+				border: 3px solid #f18c8e;
+			}
+			ion-card-title{
+				font-family: Lato;
+				font-weight: bold;
+				font-size: 15px;
+				line-height: 22px;
+				text-align: left;
+				color: #305f72;
+	
+			}
+          }
+        .Resultados{
+			margin: 5px 0px 5px;
+			font-family: Lato;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 22px;
+			text-align: center;
+			color: #305f72;
+        }
+        .Score{
+			margin: 5px 0px 5px;
+			font-family: Lato;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 22px;
+			text-align: center;
+			color: #070707;
+        }
+        .TiempoQuiz{
+			margin: 5px 0px 5px;
+			font-family: Lato;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 22px;
+			text-align: center;
+			color: #070707;
+		}
+		
+    }
+    .Quiz{
+        .Item
+        {
+            &.true{
+                margin-top: 3%;
+                border-radius: 25px;
+                --background: #d1f3c6;
+                opacity: 0.9;
+                width: 100%;
+            }
+            &.false{
+                margin-top: 3%;
+			border-radius: 25px;
+			--background: #e67b7b;
+			opacity: 0.9;
+            width: 100%;
+            }
+			
+            .CardTitulo{
+                padding-left: 0%;
+                padding-right: 0%;
+                .Titulo{
+                    font-family: Lato;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 22px;
+                    text-align: left;
+                    color: #305f72;
+                }
+            }
+            
+        }
+        .CardDescripcion{
+            padding-left: 0%;
+            padding-right: 0%;
+            .Descripcion{
+                font-family: Lato;
+                font-weight: bold;
+                font-size: 13px;
+                line-height: 22px;
+                text-align: left;
+                color: #000000;
+            }
+        }
+		
+		
+    }
+    .Respuestas{
+        padding: 20px;
+        .RespuestasBordes{
+            border-radius: 12px;
+            background: #fff;
+            border: 1px solid #f18c8e;
+        }
+        .SubTitulo{
+            font-family: Lato;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 22px;
+            text-align: left;
+            color: #000000;
+            .Titulo{
+                font-family: Lato;
+                    font-weight: bold;
+                    font-size: 13px;
+                    line-height: 22px;
+                    text-align: left;
+                    color: #305f72;
+            }
+        }
+        
+
+
+    }
+
+}
+

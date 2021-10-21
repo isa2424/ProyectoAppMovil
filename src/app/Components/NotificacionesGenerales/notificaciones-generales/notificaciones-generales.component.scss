@@ -1,0 +1,65 @@
+
+ion-list-header{
+    background-color: #f18c8e;
+    .fw700{
+        font-family: Lato;
+		  font-weight: bold;
+		  font-size: 15px;
+		  line-height: 22px;
+		  text-align: center;
+		  color: #305f72;
+    }
+}
+ion-list{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.Titulo{
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: left;
+    color: #305f72;
+    
+
+  }
+  
+      
+  .Description{
+  letter-spacing: 0.4px;
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: left;
+    color: #f18c8e;
+   
+
+}
+#course_button{    
+	//position: fixed;
+	z-index: 99;
+	bottom: 0;
+	height:auto !important;
+	right: 0;
+	margin: 0;
+	
+	width: 100%;
+	padding: 15px;
+	
+	border-radius: 13px;
+	background: #fef3f3;
+	color: #f18c8e ;
+	
+
+	font-family: Lato;
+font-weight: bold;
+font-size: 20px;
+line-height: 22px;
+text-align: center;
+color: #f18c8e;
+
+
+
+}

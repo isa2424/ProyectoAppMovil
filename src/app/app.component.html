@@ -1,0 +1,63 @@
+<ion-app>
+ 
+  <ion-menu  id="menu-material" menu-id="menuAdmin" side="start" enabled="true" swipeGesture="false" persistent="true">
+   
+    <ion-content>
+      <div class="menu-header"></div>
+      <ion-list>
+        <ion-list-header>
+          <ion-text color="dark">
+            <h5>Menú</h5>
+          </ion-text>
+        </ion-list-header>
+        <ion-item>
+          <ion-icon name="home" slot="start" color="primary"></ion-icon>
+          <ion-label class="label" (click)="Menu()" >Menú</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="person-circle" slot="start" color="primary"></ion-icon>
+          <ion-label class="label" color="primary" (click)="Perfil()">Perfil</ion-label>
+        </ion-item>
+        
+        <ion-item>
+          <ion-icon name="power" slot="start" color="primary"></ion-icon>
+          <ion-label class="label" color="primary" (click)="Salir()">Cerrar Sesión</ion-label>
+        </ion-item>
+      </ion-list>
+      
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main color=white></ion-router-outlet>
+
+
+    <ion-tabs *ngIf="Configuracion.GetFinalizoIntro()==1 && Configuracion.getUserLoggedIn()!=null && Configuracion.GetActivarTab()==1" >
+      <ion-tab-bar slot="bottom" class="TabBar">
+      
+        <ion-tab-button tab="menu">
+          <ion-icon cla name="home"></ion-icon>
+          <ion-label>Menú</ion-label>
+          
+        </ion-tab-button>
+        <ion-tab-button (click)="Perfil()" >
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-tab-button>
+    
+        
+    
+        <ion-tab-button tab="curso-favoritos">
+          <ion-icon name="heart"></ion-icon>
+          <ion-label>Favoritos</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+    <ion-tabs *ngIf="Configuracion.GetFinalizoIntro()==1 && Configuracion.getUserLoggedIn()==null && Configuracion.GetActivarTab()==null" >
+     
+    </ion-tabs>
+    <ion-tabs *ngIf="Configuracion.GetFinalizoIntro()==1 && Configuracion.getUserLoggedIn()!=null && Configuracion.GetActivarTab()==null" >
+     
+    </ion-tabs>
+
+
+  
+</ion-app>

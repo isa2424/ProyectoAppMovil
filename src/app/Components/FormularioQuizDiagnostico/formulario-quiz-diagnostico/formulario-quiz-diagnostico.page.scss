@@ -1,0 +1,64 @@
+.Item{
+    width: 100%;
+    margin: auto;
+   
+    border-top: 0.55px solid darken(#FFFFFF, 12%) !important;
+    .ItemDiv1{
+        width: 47px;
+        height: 47px;
+        border-radius: 23.5px;
+        background: #fd7e77;
+        box-shadow: 0px 8px 15px #e7eaf0;
+        margin: auto;
+        h2{
+            margin-top: 15px;
+            margin-bottom: 0px; 
+            font-family: Poppins;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            color: #fff;padding-top: 15px;
+        }
+    }
+    .ItemDiv2{
+        margin: auto;
+        height: 54px;
+        background: transparent;
+        h2{
+            font-family: Poppins;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 16px;
+            text-align: left;
+            color: #fd7e77; margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        p{
+           
+             font-family: Poppins;
+             font-weight: normal;
+             font-size: 11px;
+             line-height: 16px;
+             text-align: left;
+             color: #515c6f;margin-top: 0px;
+             margin-bottom: 0px;
+        }
+    }
+    ion-radio{ margin: auto;
+        //display: none;
+        
+    }
+
+}
+.is-correct {
+    
+    background-color: #00c853 !important;
+    border-radius: 20px;
+    --color-checked:#00c853 !important;
+  }
+  .is-incorrect {
+    background-color: #ff0000 !important;
+    border-radius: 20px;
+    --color-checked:#ff0000 !important;
+  }
