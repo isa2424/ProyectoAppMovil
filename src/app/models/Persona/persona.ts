@@ -4,7 +4,7 @@ export class Persona {
     
     Nombres:string;
     Apellidos:string;
-   
+   Edad:string;
     Provincia:string;
     Genero:string;
 

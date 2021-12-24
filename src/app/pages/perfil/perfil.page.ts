@@ -426,8 +426,9 @@ export class PerfilPage implements OnInit {
       this.variables.variable0=IdPersona;
       this.variables.variable2=Id;
       this.variables.variable5=fecha;
+      console.log(this.variables);
       this.configuracion.generarPdf( this.variables).subscribe((data:any) => {
-     
+        console.log(data);
         if(data.estado){
           window.open(data.reporte,'_blank','Reporte Clientes');
         }

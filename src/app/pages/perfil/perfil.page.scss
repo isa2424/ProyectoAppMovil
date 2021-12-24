@@ -1,7 +1,7 @@
 ion-header.loggedin{
     ion-toolbar{
-        background-color:  #f18c8e;
-        --background:  #f18c8e;
+        background-color:  #3fcaff;
+        --background:  #3fcaff;
     }
     ion-buttons{
         position: absolute;
@@ -73,7 +73,7 @@ ion-header.loggedin{
     padding: 10px 8px;
     color: #fff;
     
-    background:#f18c8e;
+    background:#3fcaff;
     span{
         display: block;
         font-size: 0.8rem;white-space:nowrap;
@@ -307,7 +307,7 @@ width: 100%;
     width: 30px;
     height: 30px;
     border-radius: 7px;
-    background: #f18c8e;
+    background: #3fcaff;
     opacity: 0.2;
     
     font-family: Lato;
@@ -334,6 +334,6 @@ width: 100%;
     font-size: 12px;
     line-height: 22px;
     text-align: left;
-    color: #f18c8e;
+    color: #3fcaff;
 
 }

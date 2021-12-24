@@ -43,7 +43,7 @@ export class CursoFavoritosPage implements OnInit {
           this.configuracion.ActivarBotonDiagnostico=true;
           this.configuracion.TextoBoton='Iniciar Prueba';
           this.configuracion.Titulo='Cursos no Disponibles';
-        this.configuracion.Informacion='Necesita realizar una prueba de diagnostico para desbloquiar todos los cursos';
+        this.configuracion.Informacion='Necesita realizar una prueba de diagnostico para desbloquear todos los cursos';
           this.notifications2();
         }else{
           this.configuracion.id_Curso=id;

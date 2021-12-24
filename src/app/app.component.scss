@@ -1,7 +1,7 @@
 #menu-material {
   .menu-header {
     padding: 100px 5px;
-    background-image: url('../assets/imgs/Fondo.png');
+    background-image: url('../assets/imgs/Fondo2.jpg');
     background-size: cover;
     color: white;
   }
@@ -13,7 +13,7 @@
 @import "../theme/common.scss";
 
 .TabBar{
-  --background: #f18c8e;;
+  --background: #3fcaff;
   ion-tab-button{
     ion-icon{
       color: #fff;

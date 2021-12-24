@@ -175,7 +175,7 @@ export class CursoDisponiblesPage implements OnInit {
     this.Id_Persona=this.configuracion.getPersonaID();
     this.variables.variable1=this.Id_Curso;
     this.variables.variable2=this.Id_Persona;
-   
+  
     this.configuracion.getCursosDisponibles(this.variables).subscribe(respuesta=>{
       this.data=respuesta;
      
@@ -232,7 +232,7 @@ export class CursoDisponiblesPage implements OnInit {
               this.configuracion.ActivarBotonDiagnostico=true;
               this.configuracion.TextoBoton='Iniciar Prueba';
               this.configuracion.Titulo='Cursos no Disponibles';
-            this.configuracion.Informacion='Necesita realizar una prueba de diagnostico para desbloquiar todos los cursos';
+            this.configuracion.Informacion='Necesita realizar una prueba de diagnostico para desbloquear todos los cursos';
               this.notifications2();
             }else{
               this.configuracion.id_Curso=id;

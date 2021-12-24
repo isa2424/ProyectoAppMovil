@@ -1,19 +1,19 @@
 .Header{
-    background-color:#f18c8e ;
+    background-color:#3fcaff ;
 }
 ion-content{
     text-align: center;
 .DivPrincipal{
  
     height: 400px;
-    background: bisque;
+    background: #80dcff;
     .Div3{
         text-align: center;
         width: 100%;
         height: 383px;
         border-radius: 0px 0px 45px 45px;
         
-        background: #f18c8e;
+        background: #3fcaff;
         
         img{
             width: 250.3px;
@@ -49,7 +49,7 @@ ion-content{
             font-size: 12px;
             letter-spacing: 0.02em;
             text-align: center;
-            color: #fd7e77;
+            color: #3fcaff;
     
     
            //Efecto del boton
@@ -64,7 +64,7 @@ ion-content{
   }
   .DivCursosPrincipal{
     height: 90%;
-    background: bisque;
+    background: #80dcff;
     .DivCurso{
       width: 100%;
       height: 100%;
@@ -88,13 +88,13 @@ ion-content{
 			
 			border-radius: 12px;
 			background: #fff;
-			border: 1px solid #f18c8e;
+			border: 1px solid #3fcaff;
 	
 			img{
 				width: 45px;
 				height: 45px;
 				border-radius: 35.5px;
-				border: 3px solid #f18c8e;
+				border: 3px solid #3fcaff;
 			}
 			ion-card-title{
 				font-family: Lato;
@@ -187,7 +187,7 @@ ion-content{
         .RespuestasBordes{
             border-radius: 12px;
             background: #fff;
-            border: 1px solid #f18c8e;
+            border: 1px solid #3fcaff;
         }
         .SubTitulo{
             font-family: Lato;

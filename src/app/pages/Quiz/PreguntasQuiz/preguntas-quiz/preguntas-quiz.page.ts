@@ -19,7 +19,7 @@ export class PreguntasQuizPage implements OnInit  {
 
 //Tiempo
   Tiempo: number;
-  TiempoPregunta = 30;
+  TiempoPregunta = 15;
   interval: any;
   TiempoTrascurrido: number;
   
@@ -123,7 +123,7 @@ export class PreguntasQuizPage implements OnInit  {
           if (this.EsPreguntaFinal() && this.TieneRespuesta === true) {
           
             //this.NavegarCertificado();
-            console.log("Entre aultima pregunta y conteste bien jajaja");
+            
             this.PruebaTerminada = true;
             clearInterval(this.interval);
           }
@@ -159,7 +159,7 @@ export class PreguntasQuizPage implements OnInit  {
         clearInterval(this.interval);
       } else {
         this.NavegarCertificado();
-        console.log("Entre aultima pregunta y conteste bien");
+        
         clearInterval(this.interval);
       }
     }else{

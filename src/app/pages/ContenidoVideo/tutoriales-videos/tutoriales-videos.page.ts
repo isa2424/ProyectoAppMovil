@@ -77,6 +77,7 @@ export class TutorialesVideosPage implements OnInit {
   RecuperarContenidoVideo(){
     this.configuracion.getContenidoCurso(this.configuracion.id_Curso).subscribe(respuesta=>{
 		this.ContadorVideo=respuesta.ContenidoCurso.length;
+		console.log(respuesta)
 		this.data=respuesta;	 
 		var user1 =this.configuracion.getPersonaID();
 		this.variables2.variable1=user1;
@@ -294,6 +295,7 @@ export class TutorialesVideosPage implements OnInit {
 		if(this.ActivarQuiz){
 			this.api.pause();
 			this.configuracion.getPreguntaQuiz(this.configuracion.id_Curso).subscribe(respuesta=>{
+				console.log(respuesta)
 				this.data2=respuesta;
 			
 				this.configuracion.allQuestions=this.data2;

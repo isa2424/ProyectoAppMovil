@@ -225,7 +225,7 @@ public SetNumerosPreguntasCorrectas(){
   }
   getCursosDisponibles(item){
    
-    
+    console.log(item);
     let strUrl=this.path_base + "/Configuracion/RecuperarCursos.php";
     return this.http.post<any>(strUrl,JSON.stringify(item))
   }
